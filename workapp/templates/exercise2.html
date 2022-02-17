@@ -1,0 +1,26 @@
+{% extends 'basesimple.html' %}
+
+{% block mycss %}
+img{
+   width:200px;
+}
+{%  endblock %}
+{% block mycontent %}
+    <h1>인터페이스 개발 팀 프로젝트</h1>
+    <hr>
+    {% if memberlist %}
+        <h2>{{result}}</h2>
+        <ul>
+            {% for a in memberlist %}
+            <li>{{a}}</li>
+            {% endfor %}
+        </ul>
+        <img src="/static/images/olaf1.png">
+    {% elif number %}
+        <h2>{{result}}</h2>
+        <img src="/static/images/olaf2.png">
+    {% else %}
+        <h2>{{result}}</h2>
+        <img src="/static/images/olaf3.png">
+    {% endif %}
+{% endblock %}
