@@ -28,3 +28,15 @@ def exercise2(request):
         result = 'type=memberlist 또는 type=number 쿼리를 전달하세요'
         content = {'result': result}
     return render(request,'exercise2.html',content)
+
+def exercise3(request):
+    context= {'title':'글 작성하기',}
+    if request.method=='POST':
+        name=request.POST.get("name","없음")
+        memo=request.POST.get("memo","없음")
+        context={
+            'title':name+'님이 남긴 글입니다.',
+            'memo':memo,
+            'name':name,
+        }
+    return render(request,'exercise3.html',context)
