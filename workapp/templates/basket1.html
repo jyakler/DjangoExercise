@@ -1,0 +1,18 @@
+{% extends 'basesimple.html' %}
+
+{% block mycss %}
+img{
+    width:200px;
+}
+a{
+    text-decoration:none;
+}
+{% endblock %}
+
+{% block mycontent %}
+<h2>요청시간: {{ current_date|date:"Y년 m월 d일 H시 i분 s초" }}</h2>
+<h4>선택된 상품:</h4>
+<img src="/static/images/{{pid}}.jpg"><br>
+<a href="{{request.headers.referer}}">상품 선택 화면으로</a>
+
+{% endblock %}

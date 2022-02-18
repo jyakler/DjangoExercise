@@ -40,3 +40,17 @@ def exercise3(request):
             'name':name,
         }
     return render(request,'exercise3.html',context)
+
+def product1(request):
+    return render(request,'product1.html')
+
+from datetime import datetime
+
+def basket1(request):
+    datetime_now=datetime.now()
+    pid=request.GET.get('pid')
+    content={
+        'current_date':datetime_now,
+        'pid':pid,
+    }
+    return render(request,'basket1.html',content)
